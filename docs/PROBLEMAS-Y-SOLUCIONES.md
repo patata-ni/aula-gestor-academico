@@ -7,6 +7,7 @@
 | La carpeta inicial no tenía código ni repositorio | Se creó el gestor y su estructura de código, pruebas y automatización | Implementado localmente |
 | No se indicó un repositorio remoto de destino | Se preparó una guía de publicación y se marcaron las evidencias remotas como pendientes | Requiere destino GitHub |
 | El equipo no tenía la herramienta de terminal gh | La ejecución local usa Git, Node y Playwright; se documentó publicación con Git | No impide la validación local |
+| El comprobador de integridad cerraba Node inmediatamente después de fetch y provocó un error de cierre de recursos en Windows | Se eliminó la salida forzada para permitir el cierre normal del proceso | Corregido y comprobado localmente |
 
 ## Decisiones preventivas, no fallos observados
 
