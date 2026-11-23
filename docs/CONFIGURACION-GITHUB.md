@@ -1,5 +1,7 @@
 # Publicación y ejecución real
 
+Estado del proyecto entregado: repositorio ya creado en patata-ni/aula-gestor-academico, Pages activado mediante Actions, ambientes pruebas y preproduccion restringidos a main, y ramas main/develop protegidas. La ejecución inicial #1 finalizó correctamente. Los pasos siguientes explican cómo reproducir la configuración en otro repositorio.
+
 ## 1. Crear el repositorio
 
 Crea un repositorio vacío llamado, por ejemplo, gestor-academico. GitHub Pages para repositorios privados depende del plan; un repositorio público evita ese requisito. Si usas la carpeta entregada con su historial Git, ejecuta:

@@ -2,6 +2,17 @@
 
 Proyecto académico de integración y entrega continua. Permite crear, editar, completar, buscar, filtrar y eliminar tareas con materia, fecha y prioridad. Guarda los datos en localStorage, por navegador y ruta del ambiente. No requiere servidor de datos ni contraseñas.
 
+## Publicación y evidencias reales
+
+- Repositorio: https://github.com/patata-ni/aula-gestor-academico
+- Pruebas: https://patata-ni.github.io/aula-gestor-academico/pruebas/
+- Preproducción: https://patata-ni.github.io/aula-gestor-academico/preproduccion/
+- Ejecución inicial completa y exitosa: https://github.com/patata-ni/aula-gestor-academico/actions/runs/45127492570
+- Versión comprobada en esa ejecución: `f1342226f20b6e8910e982aeeae2c7e58710be11`.
+- `main` y `develop` protegidas: PR y validación en tres sistemas obligatorios, incluso para administradores. Al ser un proyecto individual no se exige una aprobación de otro usuario.
+
+Los enlaces de ambientes apuntan a la última versión publicada; para identificar la versión actual consulta version.json y la ejecución más reciente de main. Las evidencias de una ejecución anterior conservan su SHA original. La actualización de acciones y documentación se tramita por PR antes de un nuevo despliegue automático.
+
 ## Inicio local
 
 Instala Node.js 24 o posterior. Desde esta carpeta:
@@ -52,7 +63,7 @@ El repositorio Git local incluido tiene main, develop y feature/base-academica. 
 
 ## Entrega académica
 
-Consulta [el proceso CD](docs/PROCESO-CD.md), [la matriz de cumplimiento](docs/EVIDENCIAS.md) y [las incidencias](docs/PROBLEMAS-Y-SOLUCIONES.md). La aplicación y las pruebas locales se entregan; las capturas de Actions, URLs públicas y validaciones remotas requieren publicar este repositorio y ejecutar el flujo. No deben sustituirse por capturas simuladas.
+Consulta [el proceso CD](docs/PROCESO-CD.md), [la matriz de cumplimiento](docs/EVIDENCIAS.md) y [las incidencias](docs/PROBLEMAS-Y-SOLUCIONES.md). La publicación y validación remotas iniciales ya se ejecutaron correctamente. Las capturas y reportes descargados se entregan en el paquete de evidencias remotas junto con sus enlaces, SHA y resultados. No se ha realizado un despliegue a producción.
 
 ## Fuentes técnicas
 
