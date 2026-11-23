@@ -1,5 +1,10 @@
 # Aula · Gestor de tareas académico
 
+## Integrantes
+
+- Tania Gonzalez
+- Alondra Aimee Garcia Gomez
+
 Proyecto académico de integración y entrega continua. Permite crear, editar, completar, buscar, filtrar y eliminar tareas con materia, fecha y prioridad. Guarda los datos en localStorage, por navegador y ruta del ambiente. No requiere servidor de datos ni contraseñas.
 
 ## Publicación y evidencias reales
@@ -9,7 +14,7 @@ Proyecto académico de integración y entrega continua. Permite crear, editar, c
 - Preproducción: https://patata-ni.github.io/aula-gestor-academico/preproduccion/
 - Ejecución inicial completa y exitosa: https://github.com/patata-ni/aula-gestor-academico/actions/runs/45127492570
 - Versión comprobada en esa ejecución: `f1342226f20b6e8910e982aeeae2c7e58710be11`.
-- `main` y `develop` protegidas: PR y validación en tres sistemas obligatorios, incluso para administradores. Al ser un proyecto individual no se exige una aprobación de otro usuario.
+- `main` y `develop` protegidas: PR y validación en tres sistemas obligatorios, incluso para administradores. La configuración actual no exige una aprobación de otro usuario.
 
 Los enlaces de ambientes apuntan a la última versión publicada; para identificar la versión actual consulta version.json y la ejecución más reciente de main. Las evidencias de una ejecución anterior conservan su SHA original. La actualización de acciones y documentación se tramita por PR antes de un nuevo despliegue automático.
 

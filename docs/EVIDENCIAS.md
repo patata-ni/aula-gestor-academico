@@ -15,7 +15,8 @@ La rúbrica proporcionada suma 70%: 8 + 10 + 10 + 12 + 12 + 10 + 8. No se presup
 ## Registro de ejecución remota inicial: completado
 
 - Repositorio: https://github.com/patata-ni/aula-gestor-academico
-- Autor, grupo y matrícula: completar por el estudiante; no se inventan datos personales.
+- Integrantes: Tania Gonzalez y Alondra Aimee Garcia Gomez.
+- Grupo y matrículas: pendientes de completar por las integrantes.
 - Commit evaluado: `f1342226f20b6e8910e982aeeae2c7e58710be11`.
 - Ejecución automática por push a main: https://github.com/patata-ni/aula-gestor-academico/actions/runs/45127492570 (número 1).
 - Pruebas: https://patata-ni.github.io/aula-gestor-academico/pruebas/
@@ -27,7 +28,7 @@ La rúbrica proporcionada suma 70%: 8 + 10 + 10 + 12 + 12 + 10 + 8. No se presup
 - Pruebas unitarias: 6 casos por cada sistema de CI, todos aprobados.
 - Producción: no desplegada; la versión es candidata comprobada en preproducción.
 
-Las reglas de main y develop se aplican también a administradores. Exigen PR y los tres controles de validación; no se exige revisión de un segundo usuario por ser un trabajo individual. Los ambientes aceptan despliegues sólo de main.
+Las reglas de main y develop se aplican también a administradores. Exigen PR y los tres controles de validación; la configuración actual no exige revisión de un segundo usuario. Los ambientes aceptan despliegues sólo de main.
 
 Las evidencias de la actualización posterior de acciones se entregan en el informe remoto final; consulta su ejecución y SHA para saber qué versión está publicada al entregar.
 
