@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Organiza tus tareas y entregas académicas."><title>Aula · Gestor académico</title><link rel="stylesheet" href="./styles.css"><script type="module" src="./app.js"></script></head>
+<body>
+<header><a class="brand" href="./">aula<span> / tu espacio académico</span></a><span class="badge">SEMESTRE EN ORDEN</span></header>
+<main>
+<section class="intro"><p class="eyebrow">MENOS PENDIENTES. MÁS ENFOQUE.</p><h1>Una tarea a la vez.</h1><p>Organiza tus entregas y haz espacio para aprender.</p></section>
+<section class="stats" aria-label="Resumen"><article><span>Total de tareas</span><strong id="total">0</strong></article><article><span>Por completar</span><strong id="pending">0</strong></article><article><span>Completadas</span><strong id="completed">0</strong></article></section>
+<div class="workspace"><section class="editor"><p class="eyebrow">PLANIFICA TU SIGUIENTE PASO</p><h2 id="form-heading">Nueva tarea</h2>
+<form id="task-form"><label for="title">Título</label><input id="title" name="title" maxlength="100" placeholder="Ej. Entregar proyecto DevOps" required>
+<label for="subject">Materia</label><input id="subject" name="subject" maxlength="60" placeholder="Ej. Ingeniería de software" required>
+<div class="form-row"><div><label for="due">Fecha de entrega</label><input id="due" name="due" type="date" required></div><div><label for="priority">Prioridad</label><select id="priority" name="priority"><option value="media">Media</option><option value="alta">Alta</option><option value="baja">Baja</option></select></div></div>
+<button class="primary" type="submit" id="save">Agregar tarea <span aria-hidden="true">↗</span></button><button type="button" id="cancel" hidden>Cancelar edición</button></form><p id="message" role="status" aria-live="polite"></p><p class="privacy">Tus tareas se guardan en este navegador. No se sincronizan entre dispositivos.</p></section>
+<section class="list-panel"><div class="list-heading"><h2>Mis entregas</h2><span id="count"></span></div><div class="filters"><div><label for="search" class="sr-only">Buscar tareas</label><input id="search" type="search" placeholder="Buscar por tarea o materia"></div><div><label for="status" class="sr-only">Filtrar por estado</label><select id="status"><option value="todas">Todas</option><option value="pendientes">Pendientes</option><option value="completadas">Completadas</option></select></div></div><ul id="tasks" aria-label="Tareas académicas"></ul><div id="empty"><span aria-hidden="true">✦</span><h3>Todo empieza con un paso.</h3><p>Agrega tu primera tarea y organiza tu semana.</p></div></section></div>
+</main><footer><span>AULA / GESTOR ACADÉMICO</span><span>Hecho para avanzar, a tu ritmo.</span></footer>
+</body></html>

@@ -1,0 +1,24 @@
+AULA - RESULTADOS LOCALES
+Fecha de preparación: 23 de noviembre de 2026 (America/Mexico_City).
+Sistema de ejecución local: Windows 11.
+Node.js: 24.19.0. Playwright: 1.65.1.
+Sintaxis: comprobación exitosa de interfaz, reglas y scripts.
+Pruebas de reglas: 6 aprobadas; 0 fallidas.
+Construcción: dist generado con version.json y hashes SHA-256.
+
+RESULTADOS FUNCIONALES REALES (fuente: results.xml):
+tasks.spec.mjs | casos=4 | fallos=0 | errores=0 | omitidos=0
+tasks.spec.mjs | casos=4 | fallos=0 | errores=0 | omitidos=0
+tasks.spec.mjs | casos=4 | fallos=0 | errores=0 | omitidos=0
+tasks.spec.mjs | casos=4 | fallos=0 | errores=0 | omitidos=0
+Total: 16 casos funcionales aprobados, 0 fallidos.
+
+Perfiles: Chromium, Firefox, WebKit y Pixel 7 emulado en Chromium.
+Capturas escritorio.png y movil-emulado.png: aplicación local con datos de ejemplo.
+Las capturas muestran una sesión local real; no son capturas de GitHub Actions.
+El reporte HTML contiene capturas por prueba; los contextos de cada caso están aislados.
+
+PENDIENTE DE EJECUCIÓN REMOTA:
+No se ha publicado repositorio, ejecutado Actions ni desplegado en Pages.
+Windows/macOS/Linux de CI, URLs públicas y validación remota: pendientes.
+La versión es candidata local: no acredita una liberación a producción.

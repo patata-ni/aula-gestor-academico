@@ -1,0 +1,184 @@
+name: Integrar, validar y desplegar Aula
+on:
+  push:
+    branches: [main, develop, 'feature/**', 'codex/**']
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: aula-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Validar (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - run: npm run build
+      - if: runner.os == 'Linux'
+        run: npx playwright install --with-deps chromium firefox webkit
+      - if: runner.os != 'Linux'
+        run: npx playwright install chromium
+      - if: runner.os == 'Linux'
+        run: npm run test:e2e
+      - if: runner.os != 'Linux'
+        run: npm run test:e2e -- --project=chromium
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: resultados-${{ matrix.os }}
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 30
+
+  build:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sistema-validado-${{ github.sha }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 30
+
+  deploy-testing:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
+    environment:
+      name: pruebas
+      url: ${{ steps.deploy.outputs.page_url }}pruebas/
+    outputs:
+      base_url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: sistema-validado-${{ github.sha }}
+          path: site/pruebas
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          name: pages-pruebas
+          path: site
+      - uses: actions/deploy-pages@v4
+        id: deploy
+        with:
+          artifact_name: pages-pruebas
+
+  verify-testing:
+    needs: deploy-testing
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium firefox webkit
+      - name: Verificar SHA publicado
+        env:
+          BASE_URL: ${{ needs.deploy-testing.outputs.base_url }}pruebas/
+        run: node scripts/verify-deployment.mjs
+      - run: npm run test:e2e
+        env:
+          BASE_URL: ${{ needs.deploy-testing.outputs.base_url }}pruebas/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidencia-pruebas
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 30
+
+  deploy-preproduction:
+    needs: [verify-testing, deploy-testing]
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
+    environment:
+      name: preproduccion
+      url: ${{ steps.deploy.outputs.page_url }}preproduccion/
+    outputs:
+      base_url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: sistema-validado-${{ github.sha }}
+          path: site/pruebas
+      - name: Promover los mismos bytes sin reconstruir
+        run: cp -r site/pruebas site/preproduccion
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          name: pages-preproduccion
+          path: site
+      - uses: actions/deploy-pages@v4
+        id: deploy
+        with:
+          artifact_name: pages-preproduccion
+
+  verify-preproduction:
+    needs: deploy-preproduction
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium firefox webkit
+      - name: Verificar SHA publicado
+        env:
+          BASE_URL: ${{ needs.deploy-preproduction.outputs.base_url }}preproduccion/
+        run: node scripts/verify-deployment.mjs
+      - run: npm run test:e2e
+        env:
+          BASE_URL: ${{ needs.deploy-preproduction.outputs.base_url }}preproduccion/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidencia-preproduccion
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 30
+      - name: Registrar versión candidata
+        env:
+          BASE_URL: ${{ needs.deploy-preproduction.outputs.base_url }}
+        run: |
+          echo "## Versión candidata validada" >> "$GITHUB_STEP_SUMMARY"
+          echo "Commit: $GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
+          echo "Pruebas: ${BASE_URL}pruebas/" >> "$GITHUB_STEP_SUMMARY"
+          echo "Preproducción: ${BASE_URL}preproduccion/" >> "$GITHUB_STEP_SUMMARY"
+          echo "Las pruebas remotas pasaron; producción requiere una decisión de liberación independiente." >> "$GITHUB_STEP_SUMMARY"

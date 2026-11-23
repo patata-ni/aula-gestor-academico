@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "commit": "local",
+  "builtAt": "2026-11-23T06:49:11.584Z",
+  "hashes": {
+    "index.html": "1e5e663578318a27b74f5153fc1cbe8dd554accd94a2c095480037d6c4891995",
+    "app.js": "f82aac870d5642ecee8c32e61ba9eb82b1844b38e10ccbe65387c1122ac6adc8",
+    "domain.js": "f6962933cb492f30b8a854a69222cf116a8900bfb7a12f733200cc88565e8bde",
+    "styles.css": "2256cb3d44280b8860e5637c7b1970a80ee3f2c2584312169919769f71b2fc76"
+  }
+}

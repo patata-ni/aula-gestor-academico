@@ -1,0 +1,122 @@
+<testsuites id="" name="" tests="16" failures="0" skipped="0" errors="0" time="21.513779">
+<testsuite name="tasks.spec.mjs" timestamp="2026-11-23T06:49:21.587Z" hostname="chromium" tests="4" failures="0" skipped="0" time="4.083" errors="0">
+<testcase name="crea, persiste, edita, completa, filtra y elimina una tarea" classname="tasks.spec.mjs" time="2.267">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tasks-crea-persiste-edita--f1718--filtra-y-elimina-una-tarea-chromium\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="impide guardar un formulario vacío" classname="tasks.spec.mjs" time="0.451">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tasks-impide-guardar-un-formulario-vacío-chromium\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="muestra texto literal y no desborda la pantalla" classname="tasks.spec.mjs" time="0.555">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tasks-muestra-texto-literal-y-no-desborda-la-pantalla-chromium\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="permite cancelar la edición y rechazar una eliminación" classname="tasks.spec.mjs" time="0.81">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tasks-permite-cancelar-la-edición-y-rechazar-una-eliminación-chromium\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tasks.spec.mjs" timestamp="2026-11-23T06:49:21.587Z" hostname="firefox" tests="4" failures="0" skipped="0" time="9.773" errors="0">
+<testcase name="crea, persiste, edita, completa, filtra y elimina una tarea" classname="tasks.spec.mjs" time="5.749">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tasks-crea-persiste-edita--f1718--filtra-y-elimina-una-tarea-firefox\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="impide guardar un formulario vacío" classname="tasks.spec.mjs" time="1.328">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tasks-impide-guardar-un-formulario-vacío-firefox\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="muestra texto literal y no desborda la pantalla" classname="tasks.spec.mjs" time="1.159">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tasks-muestra-texto-literal-y-no-desborda-la-pantalla-firefox\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="permite cancelar la edición y rechazar una eliminación" classname="tasks.spec.mjs" time="1.537">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tasks-permite-cancelar-la-edición-y-rechazar-una-eliminación-firefox\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tasks.spec.mjs" timestamp="2026-11-23T06:49:21.587Z" hostname="webkit" tests="4" failures="0" skipped="0" time="11.333" errors="0">
+<testcase name="crea, persiste, edita, completa, filtra y elimina una tarea" classname="tasks.spec.mjs" time="5.443">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tasks-crea-persiste-edita--f1718--filtra-y-elimina-una-tarea-webkit\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="impide guardar un formulario vacío" classname="tasks.spec.mjs" time="1.644">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tasks-impide-guardar-un-formulario-vacío-webkit\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="muestra texto literal y no desborda la pantalla" classname="tasks.spec.mjs" time="1.959">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tasks-muestra-texto-literal-y-no-desborda-la-pantalla-webkit\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="permite cancelar la edición y rechazar una eliminación" classname="tasks.spec.mjs" time="2.287">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tasks-permite-cancelar-la-edición-y-rechazar-una-eliminación-webkit\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tasks.spec.mjs" timestamp="2026-11-23T06:49:21.587Z" hostname="movil" tests="4" failures="0" skipped="0" time="4.829" errors="0">
+<testcase name="crea, persiste, edita, completa, filtra y elimina una tarea" classname="tasks.spec.mjs" time="2.382">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tasks-crea-persiste-edita--f1718--filtra-y-elimina-una-tarea-movil\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="impide guardar un formulario vacío" classname="tasks.spec.mjs" time="0.641">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tasks-impide-guardar-un-formulario-vacío-movil\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="muestra texto literal y no desborda la pantalla" classname="tasks.spec.mjs" time="0.735">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tasks-muestra-texto-literal-y-no-desborda-la-pantalla-movil\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="permite cancelar la edición y rechazar una eliminación" classname="tasks.spec.mjs" time="1.071">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|tasks-permite-cancelar-la-edición-y-rechazar-una-eliminación-movil\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
