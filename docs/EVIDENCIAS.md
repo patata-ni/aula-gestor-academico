@@ -12,20 +12,26 @@ La rúbrica proporcionada suma 70%: 8 + 10 + 10 + 12 + 12 + 10 + 8. No se presup
 | Multiplataforma | 10% | Configuración de 3 sistemas y 4 perfiles de navegador | Reportes reales por sistema y motor; distinguir emulación |
 | Evidencias y documentación | 8% | Guías, resultados locales e incidencias | Capturas Actions, enlaces y reportes remotos completados |
 
-## Registro de ejecución remota: pendiente
+## Registro de ejecución remota inicial: completado
 
-- Repositorio: pendiente de elegir/publicar.
-- Autor, grupo y matrícula: completar por el estudiante.
-- Commit evaluado: pendiente de ejecución remota.
-- URL del workflow y número de ejecución: pendiente.
-- Evento automático que lo inició: pendiente.
-- URL de pruebas: pendiente.
-- URL de preproducción: pendiente.
-- Resultado de verify-testing y verify-preproduction: pendiente.
-- Artefacto descargado y fecha: pendiente.
-- Decisión de liberación: pendiente; no se ha desplegado producción.
+- Repositorio: https://github.com/patata-ni/aula-gestor-academico
+- Autor, grupo y matrícula: completar por el estudiante; no se inventan datos personales.
+- Commit evaluado: `f1342226f20b6e8910e982aeeae2c7e58710be11`.
+- Ejecución automática por push a main: https://github.com/patata-ni/aula-gestor-academico/actions/runs/45127492570 (número 1).
+- Pruebas: https://patata-ni.github.io/aula-gestor-academico/pruebas/
+- Preproducción: https://patata-ni.github.io/aula-gestor-academico/preproduccion/
+- Matriz Windows, Linux y macOS: exitosa.
+- verify-testing y verify-preproduction: exitosos, con comprobación de SHA e integridad.
+- Artefacto generado: `sistema-validado-f1342226f20b6e8910e982aeeae2c7e58710be11`.
+- Validación funcional: 16 casos en Linux (3 motores y móvil emulado), 4 en Windows/Chromium y 4 en macOS/Chromium. Además, 16 casos en pruebas y 16 en preproducción. Total inicial: 56 ejecuciones de casos funcionales.
+- Pruebas unitarias: 6 casos por cada sistema de CI, todos aprobados.
+- Producción: no desplegada; la versión es candidata comprobada en preproducción.
 
-## Capturas auténticas para incorporar
+Las reglas de main y develop se aplican también a administradores. Exigen PR y los tres controles de validación; no se exige revisión de un segundo usuario por ser un trabajo individual. Los ambientes aceptan despliegues sólo de main.
+
+Las evidencias de la actualización posterior de acciones se entregan en el informe remoto final; consulta su ejecución y SHA para saber qué versión está publicada al entregar.
+
+## Inventario de capturas y enlaces que acompañan la entrega
 
 1. Repositorio mostrando src, tests, scripts, docs, package-lock y .github/workflows/deploy.yml.
 2. Ramas main, develop y feature; PR con checks aprobados y reglas de protección.
